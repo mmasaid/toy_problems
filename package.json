@@ -1,0 +1,24 @@
+{
+  "name": "toy_problems",
+  "version": "1.0.0",
+  "description": "## Voice Toy Problems `   This repo to improve the team problem solving skills `",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "lint": "eslint '**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmasaid/toy_problems.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmasaid/toy_problems/issues"
+  },
+  "homepage": "https://github.com/mmasaid/toy_problems#readme",
+  "dependencies": {
+    "jest": "^27.1.0"
+  }
+}
+
