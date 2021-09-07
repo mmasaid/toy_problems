@@ -15,7 +15,7 @@
   }
 
   describe("Tests", () => {
-    it("test", () => {
+    it("test toSnakeCase", () => {
       expect(toSnakeCase('')).toStrictEqual('')
       expect(toSnakeCase("theStealthWarrior")).toStrictEqual("the_stealth_warrior")
       expect(toSnakeCase('TheStealthWarrior')).toStrictEqual('the_stealth_warrior')
