@@ -20,7 +20,7 @@
 
 
 const LinkedList = () => {
-  //fill me in!
+  // fill me in!
 };
 
-//write methods here!
+// write methods here!
