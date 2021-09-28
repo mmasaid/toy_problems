@@ -24,6 +24,6 @@
  *	"())"
  */
 
- function balancedParens(input) {
+function balancedParens(input) {
   //  TO DO
 }

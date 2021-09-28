@@ -35,62 +35,62 @@
  */
 
 class Node {
-  constructor(data = null){
-    this.data = data
-    this.next = null
+  constructor(data = null) {
+    this.data = data;
+    this.next = null;
   }
 }
 
 class LinkedList {
-  constructor (head= null){
-    this.head = head
+  constructor(head= null) {
+    this.head = head;
   }
 
-  size(){
+  size() {
     let count = 0;
     let node = this.head;
-    while(node){
+    while (node) {
       count ++;
-      node = node.next
+      node = node.next;
     }
 
-    return count
+    return count;
   }
 
-  clear(){
-    this.head = null
+  clear() {
+    this.head = null;
   }
 
-  getLast(){
+  getLast() {
     let lastNode = this.head;
-        while (lastNode.next) {
-            lastNode = lastNode.next
-        }
-    return lastNode
+    while (lastNode.next) {
+      lastNode = lastNode.next;
+    }
+    return lastNode;
   }
 
-  getFirst(){
-    return this.head
+  getFirst() {
+    return this.head;
   }
 }
 
-describe("#LinkedList", () => {
-  let node1 = new Node(2)
-  let node2 = new Node(5)
-  let node3 = new Node(7)
-  node1.next = node2
-  node2.next = node3
-  const list = new LinkedList(node1)
+describe('#LinkedList', () => {
+  const node1 = new Node(2);
+  const node2 = new Node(5);
+  const node3 = new Node(7);
+  node1.next = node2;
+  node2.next = node3;
+  const list = new LinkedList(node1);
 
-  it("test linked list methods", () => {
-		expect(list.size()).toEqual(3)
-		expect(list.getFirst()).toStrictEqual(list.head)
-		expect(list.getLast()).toStrictEqual(list.head.next.next)
-		expect(list.head.next.data).toEqual(5)
-	})
+  it('test linked list methods', () => {
+    expect(list.size()).toEqual(3);
+    expect(list.getFirst()).toStrictEqual(list.head);
+    expect(list.getLast()).toStrictEqual(list.head.next.next);
+    expect(list.head.next.data).toEqual(5);
+  });
 
-  it("test linked list clear", () => {
-    list.clear()
-		expect(list.getFirst()).toBeNull()
-	})
-})
+  it('test linked list clear', () => {
+    list.clear();
+    expect(list.getFirst()).toBeNull();
+  });
+});

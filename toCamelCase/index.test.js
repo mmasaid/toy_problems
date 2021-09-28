@@ -9,15 +9,15 @@
   "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
  */
 
-  function toCamelCase(str){
-    return str.replace(/[_-]\w/gi, ch => ch[1].toUpperCase());
-  }
+function toCamelCase(str) {
+  return str.replace(/[_-]\w/gi, (ch) => ch[1].toUpperCase());
+}
 
-  describe("Tests", () => {
-    it("test toSnakeCase", () => {
-      expect(toCamelCase('')).toStrictEqual('')
-      expect(toCamelCase("the_stealth_warrior")).toStrictEqual("theStealthWarrior")
-      expect(toCamelCase('The-Stealth-Warrior')).toStrictEqual('TheStealthWarrior')
-      expect(toCamelCase('A-B-C')).toStrictEqual('ABC')
-    });
+describe('Tests', () => {
+  it('test toSnakeCase', () => {
+    expect(toCamelCase('')).toStrictEqual('');
+    expect(toCamelCase('the_stealth_warrior')).toStrictEqual('theStealthWarrior');
+    expect(toCamelCase('The-Stealth-Warrior')).toStrictEqual('TheStealthWarrior');
+    expect(toCamelCase('A-B-C')).toStrictEqual('ABC');
   });
+});

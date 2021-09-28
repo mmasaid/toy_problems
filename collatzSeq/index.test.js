@@ -23,6 +23,6 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
  * Write the unit tests that cover your solution
  */
 
-function collatzSeq (number) {
+function collatzSeq(number) {
 // TO DO
 }

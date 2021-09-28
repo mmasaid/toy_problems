@@ -23,9 +23,9 @@ const DIGIT_VALUES = {
   L: 50,
   C: 100,
   D: 500,
-  M: 1000
+  M: 1000,
 };
 
- const translateRomanNumeral = (romanNumeral)=> {
-   // TO DO ...
-  }
+const translateRomanNumeral = (romanNumeral)=> {
+  // TO DO ...
+};
