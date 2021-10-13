@@ -14,5 +14,28 @@ nextBigger(531)==-1
 */
 
 const nextBigger = function(num) {
-
+  if (num===0) return -1
+  const numsarr = []
+  while(num > 0){
+    const removed = num%10;
+    num-=removed
+    num/=10
+    if(removed < numsarr[numsarr.length-1]){
+      num*=10
+      num+=numsarr[0]
+      num*=10
+      num+=removed
+      for(let i = 1; i < numsarr.length ; i++){
+        num*=10
+        num+numsarr[i]
+      }
+      return num;
+    }
+    numsarr.push(removed)
+  }
+  return -1
 };
+
+console.log(nextBigger(9),
+nextBigger(111),
+nextBigger(531));
