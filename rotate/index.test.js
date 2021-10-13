@@ -25,5 +25,5 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 */
 
 const rotate = function(array, steps) {
-
+  return [...array.slice(steps, array.length), ...array.slice(0, steps)];
 };
