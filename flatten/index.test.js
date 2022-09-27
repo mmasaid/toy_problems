@@ -15,6 +15,9 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']])
 // returns ['a', 'b', 2, 3, null, 4, 'c']
 */
 
-const flatten = () => {
-
-};
+const flatten = (arr) => {
+    let flatArray = arr.reduce((acc, curVal) => {
+        return acc.concat(curVal)
+    }, [])
+    return flatArray
+}
