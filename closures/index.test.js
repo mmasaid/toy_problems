@@ -17,5 +17,41 @@ myGame.myLevel(); //should return "You need to improve your game"
 */
 
 function pingPongTracker() {
-// TO DO
+  let totalTime = 0
+
+  function timeSpentPlaying() {
+    return totalTime
+  }
+  function playOneGame() {
+    totalTime += 15
+    return "Game played"
+  }
+
+  function myLevel() {
+    if (totalTime < 30) {
+      return "I need to improve my game"
+    } else if (totalTime >= 30 && totalTime < 100) {
+      return "You need to improve your game"
+    } else {
+      return "Wow, I have wasted a lot of time"
+    }
+
+  }
+
+  return { timeSpentPlaying, playOneGame, myLevel }
+
 }
+
+
+const game = new pingPongTracker()
+
+console.log(game.timeSpentPlaying())
+console.log(game.playOneGame())
+console.log(game.playOneGame())
+console.log(game.playOneGame())
+console.log(game.playOneGame())
+console.log(game.playOneGame())
+console.log(game.playOneGame())
+console.log(game.playOneGame())
+console.log(game.timeSpentPlaying())
+console.log(game.myLevel())
