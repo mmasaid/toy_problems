@@ -25,6 +25,19 @@ Make the method work for arrays that contain objects and/or arrays as elements.
 */
 
 // eslint-disable-next-line no-extend-native
-Array.prototype.isSubsetOf = function(arr) {
+Array.prototype.isSubsetOf = function (target) {
+    const store = {}
+    const arr = this
 
-};
+    for (var i = 0;i < target.length;i++) {
+        store[target[i]] = true
+    }
+
+    for (var j = 0;j < arr.length;j++) {
+        if (!store[arr[j]]) {
+            return false
+        }
+    }
+    return true
+
+}
