@@ -10,13 +10,18 @@
  */
 
 function removeDuplication(str) {
-  // return to do ...
+  const cahracters = str.split('')
+  const set = new Set(cahracters)
+  const uniqueString = Array.from(set).join('')
+
+  return uniqueString
+
 }
 
 describe('Tests', () => {
   it('test removeDuplication', () => {
-    expect(removeDuplication('hello')).toStrictEqual('helo');
-    expect(removeDuplication('absadsasdasdad')).toStrictEqual('absd');
-    expect(removeDuplication('good morning')).toStrictEqual('god mrni');
-  });
-});
+    expect(removeDuplication('hello')).toStrictEqual('helo')
+    expect(removeDuplication('absadsasdasdad')).toStrictEqual('absd')
+    expect(removeDuplication('good morning')).toStrictEqual('god mrni')
+  })
+})
