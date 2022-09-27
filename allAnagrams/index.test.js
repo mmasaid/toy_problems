@@ -15,5 +15,34 @@
   * console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-const allAnagrams = function(string) {
+
+let generator = function (roundCount, playedSoFar) {
+  if (roundCount === 0) {
+    const char = playedSoFar.split('')
+
+    const check = char.some((v, i, a) => {
+      return a.lastIndexOf(v) != i
+    })
+
+    if (check) return
+
+    return result.push(playedSoFar)
+  }
+
+  for (let i = 0;i < charCounts;i++) {
+    generator(roundCount - 1, playedSoFar + charachters[i])
+  }
+}
+
+const allAnagrams = function (string) {
+  let charachters = string.split('')
+  let charCounts = charachters.length
+  let result = []
+
+  generator(charCounts, '')
+
+  return result
 };
+
+
+
