@@ -49,18 +49,32 @@ Array.prototype.getLastElement = function () {
 Array.prototype.search = function (wanted) {
     if (this.length == 0) return Promise.reject(new Error(emptyArrayError))
 
-    let results = []
+    let allResults = []
     this.forEach((element, index) => {
         if (element === wanted) {
             let result = {}
             result.index = index
             result.value = element
-            results.push(result)
+            allResults.push(result)
         }
     })
 
-    if (results.length == 0) return Promise.reject(new Error('Not Found!'))
-    else return results
+    if (allResults.length == 0) return Promise.reject(new Error('Not Found!'))
+    else return allResults
+}
+
+Array.prototype.searchArrOfObj = function (key, value) {
+    if (this.length == 0) return Promise.reject(new Error(emptyArrayError))
+
+    let allResults = []
+    this.forEach((element) => {
+        if (element[key] === value) {
+            allResults.push(element)
+        }
+    })
+
+    if (allResults.length == 0) return Promise.reject(new Error('Not Found!'))
+    else return allResults
 }
 
 
@@ -75,6 +89,13 @@ arr2 = [1]
 arr3 = []
 arr4 = [true, 1, 'word']
 arr5 = [1, 2, 3, 'word', 4, 2]
+arr6 = [
+    { 'brand': 'BMW', 'Year': 2015, 'price': 25000 },
+    { 'brand': 'Audi', 'Year': 2012, 'price': 15000 },
+    { 'brand': 'Mercedes', 'Year': 2020, 'price': 45000 },
+    { 'brand': 'Porsche', 'Year': 2022, 'price': 70000 },
+    { 'brand': 'BMW', 'Year': 2012, 'price': 18000 },
+]
 
 describe('customSort', () => {
     it('Should sort the array', () => {
@@ -116,5 +137,20 @@ describe('getFirstElement', () => {
     it('Should thow error', () => {
         expect(arr5.search('1')).rejects.toThrow('Not Found!');
         expect(arr3.search(1)).rejects.toThrow(emptyArrayError);
+    })
+})
+
+describe('searchArrOfObj', () => {
+    it('Shuld return the last element of the array', () => {
+        expect(arr6.searchArrOfObj('Year', 2022)).toEqual([
+            { 'brand': 'Porsche', 'Year': 2022, 'price': 70000 }
+        ]);
+        expect(arr6.searchArrOfObj('brand', 'BMW')).toEqual([
+            { 'brand': 'BMW', 'Year': 2015, 'price': 25000 },
+            { 'brand': 'BMW', 'Year': 2012, 'price': 18000 }
+        ]);
+    })
+    it('Should thow error', () => {
+        expect(arr3.searchArrOfObj()).rejects.toThrow(emptyArrayError);
     })
 })
