@@ -62,5 +62,7 @@ describe('bubbleSort', () => {
         expect(bubbleSort(a)).toEqual([3, 9, 34, 198, 200, 203, 746, 764, 984])
         expect(bubbleSort([1, 2, 3, 4])).toEqual([1, 2, 3, 4])
         expect(bubbleSort([9, 5, 7, 2, -2, 0])).toEqual([-2, 0, 2, 5, 7, 9])
+        expect(bubbleSort([5, 9, 1, 2, 3])).toEqual([1, 2, 3, 5, 9])
+        expect(bubbleSort([1, 2, 3, 9, 5])).toEqual([1, 2, 3, 5, 9])
     })
 })
