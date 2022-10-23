@@ -28,11 +28,39 @@ const a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
  *
 */
 
-// Feel free to add helper functions if needed
-
-const bubbleSort = (array) => {};
-
 /**
  * Remember to look here http://visualgo.net/sorting
  *
 */
+
+// Feel free to add helper functions if needed
+
+const bubbleSort = (array) => {
+    let n = array.length
+    let temp = []
+    for (let i = 0; i < n - 1; i++) {
+        let counter = 0
+        for (let j = 0; j < n - i - 1; j++) {
+            if (array[j] > array[j + 1]) {
+                temp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = temp
+            }
+            else counter++
+        }
+        if (counter == array.length - 1) { return array }  // to reduce time if the array is already sorted
+    }
+    return array
+};
+
+
+///////////////
+
+
+describe('bubbleSort', () => {
+    it('sorts any array of numbers', () => {
+        expect(bubbleSort(a)).toEqual([3, 9, 34, 198, 200, 203, 746, 764, 984])
+        expect(bubbleSort([1, 2, 3, 4])).toEqual([1, 2, 3, 4])
+        expect(bubbleSort([9, 5, 7, 2, -2, 0])).toEqual([-2, 0, 2, 5, 7, 9])
+    })
+})
